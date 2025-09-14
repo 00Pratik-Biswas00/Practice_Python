@@ -1,0 +1,3 @@
+WAKE_WORDS = ["hello", "jarvis"]
+LISTEN_TIMEOUT = 5
+PHRASE_LIMIT = 3
