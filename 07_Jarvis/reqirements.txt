@@ -1,4 +1,0 @@
-speechrecognition 
-pyaudio
-pyttsx3
-pocketsphinx

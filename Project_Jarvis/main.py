@@ -20,7 +20,7 @@ if __name__ == "__main__":
                 logger.warning("Could not understand wake audio")
                 continue
             except Exception as e:
-                logger.warning("Wake recognition error:", e)
+                logger.warning("Wake recognition error: %s", e)
                 continue
 
             if any(w in word.lower() for w in config.WAKE_WORDS):
@@ -36,7 +36,7 @@ if __name__ == "__main__":
                     logger.warning("Could not understand command.")
                     tts.speak("Sorry, I did not catch that.")
                 except Exception as e:
-                    logger.warning("Command recognition error:", e)
+                    logger.warning("Command recognition error: %s", e)
                     tts.speak("Something went wrong while understanding the command.")
             else:
                 logger.warning("Wake word not detected.")
@@ -47,9 +47,9 @@ if __name__ == "__main__":
             logger.warning("Exiting.")
             break
         except sr.RequestError as e:
-            logger.warning("Google API unavailable, error:", e)
+            logger.warning("Google API unavailable, error: %s", e)
             tts.speak("Sorry, I cannot reach Google right now.")
             continue
         except Exception as e:
-            logger.warning("Unexpected error in loop:", e)
+            logger.warning("Unexpected error in loop: %s", e)
             time.sleep(0.5)
