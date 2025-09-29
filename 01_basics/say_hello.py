@@ -1,4 +1,4 @@
-from hello_python import say_hello_method
+import hello_python
 
-say_hello_method("Pratik!")
-
+print("module2 is running")
+hello_python.hello()
