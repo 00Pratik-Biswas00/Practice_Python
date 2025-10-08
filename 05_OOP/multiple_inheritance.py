@@ -31,3 +31,33 @@ print(eval(input("Enter your expression: ")))
 x=100
 res = eval("x+y", {"x": x, "y":100})
 print(res)
+
+
+# Parent Class 1
+class Engine:
+    def start(self):
+        print("Engine is starting...")
+
+# Parent Class 2
+class MusicSystem:
+    def play_music(self):
+        print("Playing music...")
+
+    def start(self):
+        print("Music system is starting...")
+
+# Child Class (inherits from both)
+class Car(Engine, MusicSystem):
+    def drive(self):
+        print("Car is now driving...")
+
+# Usage
+c = Car()
+c.start()        # Which start() will it call?
+c.play_music()   # Playing music...
+c.drive()        # Car is now driving...
+
+# Checking MRO
+print(Car.mro())
+
+# When we call c.start(), Python checks the order in which parents are inherited (left to right → Engine first, then MusicSystem
